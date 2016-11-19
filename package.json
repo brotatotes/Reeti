@@ -1,0 +1,24 @@
+{
+  "name": "reeti",
+  "version": "1.0.0",
+  "description": "WildHacks 2016  \r November 18-20  \r Adam He, Dylan Ong, Austin Chambers, Eric Hao",
+  "main": "ClarifaiService.js",
+  "dependencies": {
+    "request": "^2.79.0",
+    "requests": "^0.1.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brotatotes/Reeti.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brotatotes/Reeti/issues"
+  },
+  "homepage": "https://github.com/brotatotes/Reeti#readme"
+}

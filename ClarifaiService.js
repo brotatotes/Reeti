@@ -5,8 +5,12 @@ var image_test = "https://samples.clarifai.com/metro-north.jpg"
 //image will be the image we get from the user (twilio)
 var access_token = "iK0QKs33uO9shdmEW4UH9iMV8BPSaF"
 
-{Authorization: Bearer {iK0QKs33uO9shdmEW4UH9iMV8BPSaF}}
-
 request.get({
-	url: url + "?" + image_test + "&" + access_token
+	url: url + "?url=" + image_test + "&" + "access_token=" + access_token
+}, function(err, response, body) {
+
+	var body_json = JSON.parse(body);
+	console.log(body_json['status_code']);
 })
+
+
