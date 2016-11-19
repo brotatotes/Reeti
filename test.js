@@ -26,7 +26,7 @@ function testGetRecipes(){
 	var event = {
 		"operation": "get_recipes",
 		"body-json":{
-			"ingredients": "potato lettuce"
+			"ingredients": "vegetables"
 		}
 	}
 
@@ -43,7 +43,7 @@ function testGetRecipes(){
 
 
 function run(){
-	// testGetIngredients();
+	testGetIngredients();
 	testGetRecipes();
 }
 
