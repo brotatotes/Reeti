@@ -8,15 +8,16 @@ function getIngredients(event, context, callback){
 	var url = "https://api.clarifai.com/v1/tag"
 	var image_test = event['body-json'].image;
 	var access_token = "iK0QKs33uO9shdmEW4UH9iMV8BPSaF"
+	var model = "nsfw-v1.0"
 	request.get({
-		url: url + "?url=" + image_test + "&" + "access_token=" + access_token
+		url: url + "?" + "model=" + model + "&" + "url=" + image_test + "&" + "access_token=" + access_token
 	}, function(err, response, body) {
 		if (err){
 			callback(err);
 		}
 		else{
 			var body_json = JSON.parse(body);
-			console.log(body_json['status_code']);
+			console.log(body_json);
 			callback(null, body_json);
 		}
 	})
