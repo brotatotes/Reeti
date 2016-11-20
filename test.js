@@ -5,7 +5,7 @@ function testGetIngredients(){
 	var event = {
 		"operation": "get_ingredients",
 		"body-json":{
-			"image": "https://samples.clarifai.com/metro-north.jpg",
+			"image": "http://cdn1.theinertia.com/wp-content/uploads/2016/01/veggies.jpg",
 			"access_token": "iK0QKs33uO9shdmEW4UH9iMV8BPSaF"
 		}
 	}
@@ -15,7 +15,7 @@ function testGetIngredients(){
 			console.log("failed");
 		}
 		else{
-			console.log(data);
+			console.log(data.recipes[0]);
 		}
 	})
 
@@ -44,7 +44,7 @@ function testGetRecipes(){
 
 function run(){
 	testGetIngredients();
-	testGetRecipes();
+	//testGetRecipes();
 }
 
 run();
