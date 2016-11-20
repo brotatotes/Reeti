@@ -5,9 +5,12 @@
   "main": "ClarifaiService.js",
   "dependencies": {
     "request": "^2.79.0",
-    "requests": "^0.1.7"
+    "requests": "^0.1.7",
+    "twilio": "^2.11.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "twilio": "^2.11.1"
+  },
   "scripts": {
     "test": "test"
   },

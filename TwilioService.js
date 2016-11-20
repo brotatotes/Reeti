@@ -17,7 +17,12 @@
 //
 // sendTwilioText('4805705969', 'hi austin');
 
+
 function sendTwilioText(event, context, callback) {
+  var twillio = require('twilio');
+
+  var AccountID = 'AC4b9a00ca5520e0debfb0cc74342dd3af';
+  var AuthToken = '65062a13fa75601bc46c067ec0dae491';
   console.log(event['body-json']['From'], event['body-json']['MediaUrl0']);
   var client = require('twilio')(AccountID, AuthToken);
   if (event['body-json']['MediaUrl0']) {
