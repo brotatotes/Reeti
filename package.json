@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "reeti",
   "version": "1.0.0",
   "description": "WildHacks 2016  \r November 18-20  \r Adam He, Dylan Ong, Austin Chambers, Eric Hao",
@@ -11,17 +12,23 @@
   "devDependencies": {
     "twilio": "^2.11.1"
   },
+=======
+  "name": "Reeti",
+  "version": "0.0.0",
+  "private": true,
+>>>>>>> 14c28868a5da531ff23b8b254681c0f6bbf85da8
   "scripts": {
-    "test": "test"
+    "test": "nodemon ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brotatotes/Reeti.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/brotatotes/Reeti/issues"
-  },
-  "homepage": "https://github.com/brotatotes/Reeti#readme"
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "hbs": "~3.1.0",
+    "morgan": "~1.6.1",
+    "nodemon": "^1.11.0",
+    "serve-favicon": "~2.3.0",
+    "twilio": "^2.11.1"
+  }
 }
