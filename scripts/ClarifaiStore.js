@@ -20,7 +20,7 @@ function getIngredients(event, context, callback){
 		}
 		else{
 			var body_json = JSON.parse(body);
-			console.log(body_json);
+			//console.log(body_json);
 			// callback(null, body_json);
 			filterData(body_json, event, context, callback);
 		}
@@ -54,7 +54,7 @@ function filterData(data, event, context, callback){
 		zipped_data = zipped_data.slice(0, zipped_data.length);
 	}
 
-	console.log("zipped data", zipped_data);
+	// console.log("zipped data", zipped_data);
 
 	var search_string = "";
 
