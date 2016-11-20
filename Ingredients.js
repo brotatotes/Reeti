@@ -6,9 +6,6 @@ var Ingredients_List = ["green bean", "onion", "pepper", "vegetable oil", "canol
  "meatball", "pasta", "fettucine", "chicken", "pork", "ground beef", "beef", "pea",
  "strawberries", "almond", "walnut", "lemon", "orange", "apple", "banana", "potato", "mushroom",
  "avocado", "garlic", "ginger", "green onion", "basil", "oregano", "thyme"];
-
->>>>>>> e6b903ce7a7da88553508ad522dff45c97626009
-
 module.exports = {
 	Ingredients_List: Ingredients_List
 }
