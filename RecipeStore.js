@@ -7,7 +7,7 @@ function getRecipes(data, event, context, callback) {
 
 	var url = service_url + search + '?key=' + apikey + '&q=' + search;
 	var options = {
-		url: url, 
+		url: url,
 	};
 
 	request.get(options, function(err, response, body) {
@@ -19,7 +19,7 @@ function getRecipes(data, event, context, callback) {
 			//console.log(body_json[0]);
 			callback(null,body_json);
 		}
-	})	
+	})
 }
 
 
