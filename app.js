@@ -7,6 +7,10 @@ function route(event, context, callback){
 		case "ping":
 		console.log("pong");
 		break;
+		case "test":
+		console.log("event", event);
+		callback(null, event);
+		break;
 		case "get_ingredients":
 		ClarifaiStore.getIngredients(event, context, callback);
 		break;
