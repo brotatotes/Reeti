@@ -10,19 +10,19 @@ var users = {};
 
 router.post('/', function(req, res, next) {
   var client = require('twilio')(AccountID, AuthToken);
-  console.log('got the request');
-  if (req.body['MediaUrl0']) {
+  var sender = req.body['From'];
+  var image_url = req.body['MediaUrl0'];
+
+  if (image_url) {
     clarifaiStore.getIngredients({
       'body-json': {
-        image: req.body['MediaUrl0'],
+        image: image_url,
       },
     }, null, function(err, data) {
       if (err) {
         console.log(err);
       } else {
         console.log(data.recipes);
-
-        var sender = req.body['From'];
 
         if (!(sender in users)) {
           users[sender] = {
@@ -31,18 +31,20 @@ router.post('/', function(req, res, next) {
           };
         }
 
+        var recipes = data.recipes;
+
         client.messages.create({
           to: sender,
           from: '+14807870438',
-          body: (data.recipes.length > 0) ? data.recipes[0].title + '\n' + data.recipes[0]['source_url'] : 'Could not find a recipe',
+          body: (recipes.length > 0) ? recipes[0].title + '\n' + recipes[0]['source_url'] : 'Could not find a recipe',
         }, function(err, msg) {
           console.log(users, users[sender]);
           users[sender]['index'] = users[sender]['index'] + 1;
-          if (data.recipes.length > 0) {
+          if (recipes.length > 0) {
             client.messages.create({
               to: sender,
               from: '+14807870438',
-              body: 'Type anything for another recipe',
+              body: 'Reply MORE for another recipe',
             }, function(err, msg) {
               console.log(err);
             });
@@ -51,12 +53,23 @@ router.post('/', function(req, res, next) {
       }
     })
   } else if (sender in users) {
+    console.log(users[sender]['recipes'][users[sender]['index']].title);
     client.messages.create({
       to: sender,
       from: '+14807870438',
-      body: (users[sender]['index'] < users[sender]['recipes'].length) ? "Here's another recipe\n" + data.recipes[users[sender]['index']].title + '\n' + data.recipes[users[sender]['index']]['source_url'] : 'No more recipes :(',
+      body: (users[sender]['index'] < users[sender]['recipes'].length) ? "Here's another recipe\n" + users[sender]['recipes'][users[sender]['index']].title + '\n' + users[sender]['recipes'][users[sender]['index']]['source_url'] : 'No more recipes :(',
     }, function(err, msg) {
       console.log(err);
+      users[sender]['index'] = users[sender]['index'] + 1;
+      if (users[sender]['recipes'].length > 0) {
+        client.messages.create({
+          to: sender,
+          from: '+14807870438',
+          body: 'Reply MORE for another recipe',
+        }, function(err, msg) {
+          console.log(err);
+        });
+      }
     });
   } else {
     client.messages.create({
