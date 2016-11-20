@@ -4,6 +4,9 @@ var ClarifaiStore = require("./ClarifaiStore.js");
 
 function route(event, context, callback){
 	switch(event.operation){
+		case "ping":
+		console.log("pong");
+		break;
 		case "get_ingredients":
 		ClarifaiStore.getIngredients(event, context, callback);
 		break;
