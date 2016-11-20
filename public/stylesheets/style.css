@@ -15,7 +15,7 @@ body::before {
   height: 100%;
   width: 100%;
   z-index: -1;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
 
 }
 
@@ -23,14 +23,14 @@ h1 {
   font-family: 'Caveat';
   font-size: 8rem;
   text-align: center;
-  color: #CCC;
+  color: #DDD;
 }
 
 h2 {
   font-family: 'Raleway';
   text-align: center;
   font-size: 3rem;
-  color: #CCC;
+  color: #DDD;
 }
 
 .container {
