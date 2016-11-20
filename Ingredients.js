@@ -4,7 +4,7 @@ var Ingredients_List = ["canola oil", "ketchup", "olive oil", "salt", "chili",
  "yogurt", "tortilla", "blueberry", "parmesan", "mozzarella", "flour", "spaghetti",
  "meatball", "pasta", "fettucine", "chicken", "pork", "ground beef", "beef", "pea",
  "strawberries", "almond", "walnut", "lemon", "orange", "apple", "banana", "potato", "mushroom"
- "avocado"];
+ "avocado", "dough", "pepperoni", "garlic"];
 
 module.exports = {
 	Ingredients_List: Ingredients_List
