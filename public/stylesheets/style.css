@@ -1,5 +1,7 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway:200,400,700';
+@import url(https://fonts.googleapis.com/css?family=Caveat);
+
 body {
-  font: 14px "Roboto", "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url('https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/19/199/199814/iuofjgenwsaxmjokhhpnwmuamrshk0al5nfxhjghon9uaudbzdecnih2m48ux2yu-f.jpg?1412531086');
   background-size: cover;
   background-repeat: no-repeat;
@@ -18,12 +20,14 @@ body::before {
 }
 
 h1 {
-  font-size: 5rem;
+  font-family: 'Caveat';
+  font-size: 8rem;
   text-align: center;
   color: #CCC;
 }
 
 h2 {
+  font-family: 'Raleway';
   text-align: center;
   font-size: 3rem;
   color: #CCC;
