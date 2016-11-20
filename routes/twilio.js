@@ -44,7 +44,7 @@ router.post('/', function(req, res, next) {
             client.messages.create({
               to: sender,
               from: '+13123132436',
-              body: 'Reply MORE for another recipe:',
+              body: 'Reply MORE for another recipe',
             }, function(err, msg) {
               console.log(err);
             });
@@ -65,7 +65,7 @@ router.post('/', function(req, res, next) {
         client.messages.create({
           to: sender,
           from: '+13123132436',
-          body: 'Reply MORE for another recipe:',
+          body: 'Reply MORE for another recipe',
         }, function(err, msg) {
           console.log(err);
         });
