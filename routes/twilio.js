@@ -3,8 +3,8 @@ var router = express.Router();
 var twillio = require('twilio');
 var clarifaiStore = require('../scripts/ClarifaiStore');
 
-var AccountID = 'AC4b9a00ca5520e0debfb0cc74342dd3af';
-var AuthToken = '65062a13fa75601bc46c067ec0dae491';
+var AccountID = 'AC720f29ac5532f737761085e3c755513f';
+var AuthToken = '773be995cac24f7e0c3449b17257725d';
 
 var users = {};
 
@@ -35,7 +35,7 @@ router.post('/', function(req, res, next) {
 
         client.messages.create({
           to: sender,
-          from: '+14807870438',
+          from: '+13123132436',
           body: (recipes.length > 0) ? recipes[0].title + '\n' + recipes[0]['source_url'] : 'Could not find a recipe',
         }, function(err, msg) {
           console.log(users, users[sender]);
@@ -43,7 +43,7 @@ router.post('/', function(req, res, next) {
           if (recipes.length > 0) {
             client.messages.create({
               to: sender,
-              from: '+14807870438',
+              from: '+13123132436',
               body: 'Reply MORE for another recipe:',
             }, function(err, msg) {
               console.log(err);
@@ -53,10 +53,10 @@ router.post('/', function(req, res, next) {
       }
     })
   } else if (sender in users) {
-    console.log(users[sender]['recipes'][users[sender]['index']].title);
+    console.log(users[sender]['recipes']);
     client.messages.create({
       to: sender,
-      from: '+14807870438',
+      from: '+13123132436',
       body: (users[sender]['index'] < users[sender]['recipes'].length) ? "Here's another recipe\n" + users[sender]['recipes'][users[sender]['index']].title + '\n' + users[sender]['recipes'][users[sender]['index']]['source_url'] : 'No more recipes :(',
     }, function(err, msg) {
       console.log(err);
@@ -64,7 +64,7 @@ router.post('/', function(req, res, next) {
       if (users[sender]['recipes'].length > 0) {
         client.messages.create({
           to: sender,
-          from: '+14807870438',
+          from: '+13123132436',
           body: 'Reply MORE for another recipe:',
         }, function(err, msg) {
           console.log(err);
@@ -74,7 +74,7 @@ router.post('/', function(req, res, next) {
   } else {
     client.messages.create({
       to: sender,
-      from: '+14807870438',
+      from: '+13123132436',
       body: 'Please send us a picture :)'
     }, function(err, msg) {
       console.log(err);
