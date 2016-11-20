@@ -17,7 +17,7 @@
 //
 // sendTwilioText('4805705969', 'hi austin');
 
-function(event, context, callback) {
+function sendTwilioText(event, context, callback) {
   console.log(event['body-json']['From'], event['body-json']['MediaUrl0']);
   var client = require('twilio')(AccountID, AuthToken);
   if (event['body-json']['MediaUrl0']) {
@@ -37,4 +37,8 @@ function(event, context, callback) {
       console.log(err);
     });
   }
+}
+
+module.exports = {
+  sendTwilioText: sendTwilioText
 }

@@ -1,6 +1,7 @@
 var ClarifaiService = require("./ClarifaiService.js");
 var RecipeService = require("./RecipeService.js");
 var ClarifaiStore = require("./ClarifaiStore.js");
+var TwilioService = require("./TwilioService.js");
 
 function route(event, context, callback){
 	switch(event.operation){
@@ -9,7 +10,8 @@ function route(event, context, callback){
 		break;
 		case "test":
 		console.log("event", event);
-		callback(null, event);
+		TwilioService.sendTwilioText(event, context, callback);
+		//callback(null, event);
 		break;
 		case "get_ingredients":
 		ClarifaiStore.getIngredients(event, context, callback);
