@@ -7,7 +7,7 @@ var Ingredients_List = ["green bean", "onion", "pepper", "vegetable oil", "canol
   "strawberries", "almond", "walnut", "lemon", "orange", "apple", "banana", "potato",
   "mushroom", "avocado", "garlic", "ginger", "green onion", "basil", "oregano", "thyme",
   "cucumber", "corn", "fish", "asparagus", "mayonnaise", "mustard", "wasabi", "salmon", "sashimi", "seaweed",
-  "shellfish", "cashew", "clam", "soy", "tofu", ""];
+  "shellfish", "cashew", "clam", "soy", "tofu"];
 module.exports = {
   Ingredients_List: Ingredients_List
 }

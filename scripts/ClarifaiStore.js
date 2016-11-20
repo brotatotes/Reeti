@@ -56,15 +56,21 @@ function filterData(data, event, context, callback){
 
 	console.log("zipped data", zipped_data);
 
-	var search_string = "";
+	// var search_string = "";
+
+	// zipped_data.forEach(function(pair){
+	// 	search_string = search_string + pair[0] + " ";
+	// });
+
+	var search_words = [];
 
 	zipped_data.forEach(function(pair){
-		search_string = search_string + pair[0] + " ";
+		search_words.push(pair[0]);
 	});
 
-	console.log(search_string);
+	console.log(search_words);
 
-	RecipeStore.getRecipes(search_string, event, context, callback);
+	RecipeStore.getRecipes(search_words, search_words.length, event, context, callback);
 }
 
 module.exports = {
