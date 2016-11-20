@@ -31,8 +31,8 @@ function getIngredients(event, context, callback){
 function filterData(data, event, context, callback){
 	var results = data.results[0].result;
 	var zipped_data = [];
-	var threshold = .5;
-	//console.log('dude', IngredientList.Ingredients_List.indexOf('niggers'));
+	// var threshold = .5;
+
 	zipped_data = results.tag.classes.map(function(item, index){
 		return [item, results.tag.probs[index]];
 	});
@@ -43,11 +43,17 @@ function filterData(data, event, context, callback){
 		}
 	});
 
-	zipped_data = zipped_data.filter(function(pair){
-		if (pair[1] > threshold){
-			return pair
-		}
-	});
+	// zipped_data = zipped_data.filter(function(pair){
+	// 	if (pair[1] > threshold){
+	// 		return pair
+	// 	}
+	// });
+	if (zipped_data.length >= 3) {
+		zipped_data = zipped_data.slice(0,3);
+	} else {
+		zipped_data = zipped_data.slice(0, zipped_data.length);
+	}
+
 	console.log("zipped data", zipped_data);
 
 	var search_string = "";
