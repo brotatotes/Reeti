@@ -23,3 +23,6 @@ If a best fitting recipe requires some ingredients not seen in the picture, our 
 
 ## IMPORTANT!!!
 Twilio Texting MMS is costly so please don't spam :)
+
+##Who, Where, When?
+This project took place at Northwestern's WildHacks 2016 from November 18-20. Our team members are Austin Chambers, Adam He, Eric Hao, and Dylan Ong. We made it to the final top 10 hacks, and demoed to the entire hackathon!
