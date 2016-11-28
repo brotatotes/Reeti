@@ -20,7 +20,7 @@ function getIngredients(event, context, callback) {
         },
     }, function(err, response, body) {
         body = JSON.parse(body);
-        var access_token = "IwVpi5Xi5fSnR627s6qniLauqh9nIV"
+        var access_token = body['access_token'];
         request.get({
             url: url + "?" + "model=" + model + "&" + "url=" + image_test + "&" + "access_token=" + access_token
         }, function(err, response, body) {
