@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var twilio = require('twilio');
+var twilio = require('../node_modules/twilio/index');
 var clarifaiStore = require('../scripts/ClarifaiStore');
 
 var AccountID = 'AC720f29ac5532f737761085e3c755513f';
