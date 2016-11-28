@@ -1,26 +1,13 @@
-var ClarifaiStore = require('./scripts/ClarifaiStore.js');
+var request = require('request');
 
-function testClarifaiStore(){
-	var event ={
-		"body-json":{
-			"image": "http://www.camerican.com/files/8812/8556/9526/iStock_000012105607XSmall.jpg"
-		}
-	};
-
-	var context = [];
-
-	ClarifaiStore.getIngredients(event, context, function(err, data){
-		if (err){
-			console.log(err);
-		}
-		else{
-			console.log("RECIPE:", data);
-		}
-	});
-}
-
-function run(){
-	testClarifaiStore();
-}
-
-run();
+request.post({
+    url: 'https://api.clarifai.com/v1/token/',
+    form: {
+        client_id: process.env.CLARIFAI_CLIENT_ID,
+        client_secret: process.env.CLARIFAI_CLIENT_SECRET,
+        grant_type: 'client_credentials',
+    },
+}, function(err, response, body) {
+    body = JSON.parse(body);
+    console.log(body, body['access_token']);
+})
