@@ -1,5 +1,8 @@
 ## [Try it!](https://reeti-recipe.herokuapp.com)
 
+## IMPORTANT!!!
+Twilio Texting MMS is costly so please don't spam :)
+
 ## Inspiration
 Our dear friend Reeti often found herself left with a handful of random food ingredients she didn't know what to do with. She might go online, search different ingredients, surf the food network, or browse other food websites, hoping to find some recipe that she can use. What if you could just take a photo of what you've got, text it, and receive delicious recipes instantly?
 
@@ -22,9 +25,6 @@ APIs streamline a lot of development and make lots of systems and services avail
 Other than the picture they send, users can't currently make further specifications to narrow down what they are looking for in a recipe. We would like to integrate options for filters like 'vegetarian' or 'Mexican cuisine', which would represent the user's recipe preferences. 
 
 If a best fitting recipe requires some ingredients not seen in the picture, our service could offer ways to order them or display nearby stores that have them with their prices. 
-
-## IMPORTANT!!!
-Twilio Texting MMS is costly so please don't spam :)
 
 ## Who, Where, When?
 This project took place at Northwestern's WildHacks 2016 from November 18-20. Our team members are Austin Chambers, Adam He, Eric Hao, and Dylan Ong. We made it to the final top 10 hacks, and demoed to the entire hackathon!
