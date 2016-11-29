@@ -14,12 +14,13 @@ function getIngredients(event, context, callback) {
     request.post({
         url: 'https://api.clarifai.com/v1/token/',
         form: {
-            client_id: process.env.CLARIFAI_CLIENT_ID,
-            client_secret: process.env.CLARIFAI_CLIENT_SECRET,
+            client_id: 'FmJqTvlxQB9NPoRiYBy4PgOrkMwWkTZbhPDqxp7k',
+            client_secret: 'TKC16cTIq93C-Wd4X7graHIhQqhJynhsuj5ROmMk',
             grant_type: 'client_credentials',
         },
     }, function(err, response, body) {
         body = JSON.parse(body);
+        console.log(body);
         var access_token = body['access_token'];
         request.get({
             url: url + "?" + "model=" + model + "&" + "url=" + image_test + "&" + "access_token=" + access_token
@@ -28,6 +29,7 @@ function getIngredients(event, context, callback) {
                 callback(err);
             } else {
                 body = JSON.parse(body);
+                console.log(body);
                 //console.log(body_json);
                 // callback(null, body_json);
                 filterData(body, event, context, callback);
